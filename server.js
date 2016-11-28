@@ -11,9 +11,9 @@ app.set('view engine','hbs');
 
 
 
-app.use(function(req,res,next){
-  res.render('tester.hbs');
-});
+// app.use(function(req,res,next){
+//   res.render('tester.hbs');
+// });
 app.use(express.static(__dirname+'/public'));
 
 app.use((req,res,next)=>{
@@ -62,6 +62,13 @@ age:20,
        paragraph:'Ntiriniga',
        
    });
+  });
+
+  app.get('/projects',(req,res)=>{
+
+      res.render('projects.hbs',{
+          pageTitle:'Projects'
+      });
   });
 
   app.listen(port,()=>{
